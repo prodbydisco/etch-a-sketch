@@ -1,5 +1,7 @@
 const mainContainer = document.querySelector('.grid');
 const miniGrid = document.querySelector('.mini-grid')
+const clearBtn = document.querySelector('.clear');
+
 
 
 function createGrid(numOfRows) {
@@ -16,6 +18,11 @@ function createGrid(numOfRows) {
         for (let j = 0; j < numOfRows; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
+
+            square.addEventListener('mouseenter', () => square.classList.add("activated"));
+            square.addEventListener('mouseleave', () => square.classList.remove("activated"));
+            square.addEventListener('click', () => square.classList.add("drawn"));
+
             row.appendChild(square);
         }
         
@@ -54,5 +61,13 @@ for (let i = 0; i < 4; i++) {
     
     miniGrid.appendChild(row);
 }
-
 miniGrid.addEventListener('click', createNewGrid);
+
+
+// Clear drawing
+function clearDrawing() {
+    squares = document.querySelectorAll('.square');
+    console.log(squares);
+    squares.forEach(square => {square.classList.remove("drawn")});
+}
+clearBtn.addEventListener('click', clearDrawing);
