@@ -71,18 +71,5 @@ body {
 
 .square {
     flex: 1;
-    opacity: 1;
-    transition: 2s;
-}
-
-.activated {
-    background-color: #0000ffbb;
-    opacity: 1;
-    transition: 0.1s;
-    cursor: crosshair;
-}
-
-.drawn {
-    background-color: #0000ffbb;
-    opacity: 1;
+    transition: 0.5s;
 }

@@ -21,16 +21,13 @@ function createGrid(numOfRows) {
         for (let j = 0; j < numOfRows; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
+            let tileDarkness = 0;
 
             square.addEventListener('mouseenter', () => {
-                square.style.transition = "0.5s";
-                square.style.backgroundColor = `rgb(${getRandomNum(255)},${getRandomNum(255)},${getRandomNum(255)})`
+                console.log('mouse entered');
+                tileDarkness+=0.1;
+                square.style.backgroundColor = `rgba(0, 0, 0, ${tileDarkness})`
             });
-            square.addEventListener('mouseleave', () => {
-                square.style.transition = "2s";
-                square.style.backgroundColor = '';
-            });
-            square.addEventListener('click', () => square.classList.add("drawn"));
 
             row.appendChild(square);
         }
@@ -77,6 +74,6 @@ miniGrid.addEventListener('click', createNewGrid);
 function clearDrawing() {
     squares = document.querySelectorAll('.square');
     console.log(squares);
-    squares.forEach(square => {square.classList.remove("drawn")});
+    squares.forEach(square => {square.style.backgroundColor = ''});
 }
 clearBtn.addEventListener('click', clearDrawing);
