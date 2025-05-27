@@ -1,0 +1,72 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    font-family: "JetBrains Mono", monospace;
+    padding: 0;
+    width: 100vw;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-grid {
+    margin: 0 auto;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    width: 30px;
+    height: 30px;
+}
+.mini-grid:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.mini-square {
+    border: 1px solid black;
+    flex: 1;
+}
+
+.grid {
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    width: 800px;
+    height: 800px;
+
+    border: 8px solid rgb(187, 187, 187);
+    border-radius: 6px;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.square {
+    flex: 1;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.square:hover {
+    background-color: rgba(0, 0, 255, 0.733);
+}
