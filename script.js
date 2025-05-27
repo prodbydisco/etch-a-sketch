@@ -2,6 +2,9 @@ const mainContainer = document.querySelector('.grid');
 const miniGrid = document.querySelector('.mini-grid')
 const clearBtn = document.querySelector('.clear');
 
+function getRandomNum(max) {
+    return Math.floor(Math.random() * max);
+}
 
 
 function createGrid(numOfRows) {
@@ -19,8 +22,14 @@ function createGrid(numOfRows) {
             const square = document.createElement('div');
             square.classList.add('square');
 
-            square.addEventListener('mouseenter', () => square.classList.add("activated"));
-            square.addEventListener('mouseleave', () => square.classList.remove("activated"));
+            square.addEventListener('mouseenter', () => {
+                square.style.transition = "0.5s";
+                square.style.backgroundColor = `rgb(${getRandomNum(255)},${getRandomNum(255)},${getRandomNum(255)})`
+            });
+            square.addEventListener('mouseleave', () => {
+                square.style.transition = "2s";
+                square.style.backgroundColor = '';
+            });
             square.addEventListener('click', () => square.classList.add("drawn"));
 
             row.appendChild(square);

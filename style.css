@@ -71,7 +71,7 @@ body {
 
 .square {
     flex: 1;
-    opacity: 0;
+    opacity: 1;
     transition: 2s;
 }
 
